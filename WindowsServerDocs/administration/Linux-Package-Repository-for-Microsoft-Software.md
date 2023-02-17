@@ -54,6 +54,8 @@ Note that not all supported distributions are listed here. See the current suppo
 - Ubuntu 18.04 (Bionic)<p>`curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -`<p>`sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.04/prod`<p>`sudo apt-get update`
 
  - Ubuntu 20.04 (Focal)<p>`curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc`<p>`sudo apt-add-repository https://packages.microsoft.com/ubuntu/20.04/prod`<p>`sudo apt-get update`
+  
+ - Ubuntu 22.04 (Jammy)<p>`curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc`<p>`sudo apt-add-repository https://packages.microsoft.com/ubuntu/22.04/prod`<p>`sudo apt-get update`
 
 ## Manual Configuration
 
@@ -92,6 +94,17 @@ curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/
 # Update package index files
 sudo apt-get update
 ```
+  - Ubuntu 22.04
+
+```
+# Install repository configuration
+curl -sSL https://packages.microsoft.com/config/ubuntu/22.04/prod.list | sudo tee /etc/apt/sources.list.d/microsoft-prod.list
+
+# Install Microsoft GPG public key
+curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
+
+# Update package index files
+sudo apt-get update
 
 ## See Also
 
